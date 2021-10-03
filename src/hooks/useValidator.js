@@ -45,7 +45,7 @@ const useValidator = (validationType) => {
         if (!pincode) return [false, "Pincode is mandatory"];
         else if (/[a-zA-Z]/.test(pincode)) return [false, "Words are not allowed"];
         else if (/[^0-9]/.test(pincode)) return [false, "Special Characters are not allowed"];
-        else if (!pincode.length === 6) return [false, "Invalid pincode"];
+        else if (pincode.length !== 6) return [false, "Invalid pincode"];
         else return [true, ""];
       };
     case "name":
