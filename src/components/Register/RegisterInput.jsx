@@ -1,6 +1,6 @@
 import { TextField } from "@material-ui/core";
 import React, { useState } from "react";
-import useValidator from "../hooks/useValidator";
+import useValidator from "../../hooks/useValidator";
 
 const RegisterInput = ({
   id,

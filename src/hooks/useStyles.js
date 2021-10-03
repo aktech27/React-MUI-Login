@@ -29,6 +29,17 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "space-around",
   },
+  registerContainer: {
+    minHeight: "500px",
+    display: "flex",
+    alignItems: "center",
+    background: "linear-gradient(45deg, #00ffff 0%, #e6ffff 10%, #ffffff 90%,#00ffff 100% )",
+  },
+  registerButtons: {
+    width: "90%",
+    display: "flex",
+    justifyContent: "space-between",
+  },
 });
 
 export default useStyles;
