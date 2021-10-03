@@ -40,6 +40,14 @@ const useValidator = (validationType) => {
         else if (phone.length < 8 || phone.length > 10) return [false, "Invalid phone number"];
         else return [true, ""];
       };
+    case "pincode":
+      return (pincode) => {
+        if (!pincode) return [false, "Pincode is mandatory"];
+        else if (/[a-zA-Z]/.test(pincode)) return [false, "Words are not allowed"];
+        else if (/[^0-9]/.test(pincode)) return [false, "Special Characters are not allowed"];
+        else if (!pincode.length === 6) return [false, "Invalid pincode"];
+        else return [true, ""];
+      };
     case "name":
       return (name) => {
         if (!name) return [false, "Name is mandatory"];
