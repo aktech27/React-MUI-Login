@@ -16,7 +16,6 @@ const useStyles = makeStyles({
     background: "linear-gradient(45deg, #3f5efb 0%, #fc466b 100%)",
   },
   loginContainer: {
-    width: "500px",
     height: "500px",
     display: "flex",
     alignItems: "center",

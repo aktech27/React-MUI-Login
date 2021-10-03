@@ -17,9 +17,11 @@ const Login = () => {
   };
   return (
     <Grid container justifyContent="center" alignItems="center" className={styles.container}>
-      <Paper elevation={15} className={styles.loginContainer}>
-        <LoginForm handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} />
-      </Paper>
+      <Grid item xs={11} sm={8} md={5} lg={4} xl={3}>
+        <Paper elevation={15} className={styles.loginContainer}>
+          <LoginForm handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} />
+        </Paper>
+      </Grid>
     </Grid>
   );
 };
