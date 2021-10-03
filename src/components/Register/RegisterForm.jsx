@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Typography, Link, Button } from "@material-ui/core";
+import { Typography, Link, Button, createTheme, ThemeProvider } from "@material-ui/core";
 import useStyles from "../../hooks/useStyles";
 import SectionOne from "./SectionOne";
 import RegisterButtons from "./RegisterButtons";
@@ -10,10 +10,47 @@ import StepIndicator from "./StepIndicator";
 const RegisterForm = (props) => {
   const styles = useStyles();
 
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(0);
+
+  const theme = createTheme({
+    overrides: {
+      MuiStepIcon: {
+        active: {
+          color: "#00c853 !important",
+        },
+        completed: {
+          color: "#00c853 !important",
+        },
+      },
+      MuiStepConnector: {
+        alternativeLabel: {
+          top: 10,
+          left: "calc(-50% + 16px)",
+          right: "calc(50% + 16px)",
+        },
+        active: {
+          "& $line": {
+            borderColor: "#00c853",
+          },
+        },
+        completed: {
+          "& $line": {
+            borderColor: "#00c853",
+          },
+        },
+        lineHorizontal: {
+          borderColor: "#bdbdbd",
+          borderTopWidth: "3px",
+          borderRadius: 1,
+        },
+      },
+    },
+  });
   return (
     <form className={styles.loginForm} onSubmit={(e) => props.handleSubmit(e)}>
-      <StepIndicator activeStep={activeStep} />
+      <ThemeProvider theme={theme}>
+        <StepIndicator activeStep={activeStep} />
+      </ThemeProvider>
       {activeStep === 0 ? (
         <SectionOne
           setSection1Details={props.setSection1Details}
