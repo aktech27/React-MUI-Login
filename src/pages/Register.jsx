@@ -28,15 +28,17 @@ const Register = () => {
   };
   return (
     <Grid container justifyContent="center" alignItems="center" className={styles.container}>
-      <Paper elevation={15} className={styles.registerContainer}>
-        <RegisterForm
-          handleSubmit={handleSubmit}
-          setSection1Details={setSection1Details}
-          section1Details={section1Details}
-          setSection2Details={setSection2Details}
-          section2Details={section2Details}
-        />
-      </Paper>
+      <Grid item xs={11} sm={9} md={7} lg={6} xl={4}>
+        <Paper elevation={15} className={styles.registerContainer}>
+          <RegisterForm
+            handleSubmit={handleSubmit}
+            setSection1Details={setSection1Details}
+            section1Details={section1Details}
+            setSection2Details={setSection2Details}
+            section2Details={section2Details}
+          />
+        </Paper>
+      </Grid>
     </Grid>
   );
 };
