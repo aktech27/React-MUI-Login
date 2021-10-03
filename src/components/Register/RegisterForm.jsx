@@ -5,6 +5,7 @@ import SectionOne from "./SectionOne";
 import RegisterButtons from "./RegisterButtons";
 import SectionTwo from "./SectionTwo";
 import SectionFinish from "./SectionFinish";
+import StepIndicator from "./StepIndicator";
 
 const RegisterForm = (props) => {
   const styles = useStyles();
@@ -12,6 +13,7 @@ const RegisterForm = (props) => {
   const [activeStep, setActiveStep] = useState(1);
   return (
     <form className={styles.loginForm} onSubmit={(e) => props.handleSubmit(e)}>
+      <StepIndicator activeStep={activeStep} />
       {activeStep === 0 ? (
         <SectionOne
           setSection1Details={props.setSection1Details}
